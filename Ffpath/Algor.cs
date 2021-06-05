@@ -77,12 +77,20 @@ namespace Ffpath
                 sw.WriteLine(text);
             }
 
+            using (StreamReader sr = new StreamReader(writePath, System.Text.Encoding.Default))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
         }
 
         public void Dijkstra(int n, int st, int[,] w, List<string> IPA)
         {
             string[] Dd = new string[n];
-            string buf = "";
+            //string buf = "";
             bool[,] visited = new bool[n, n];
             int[,] D = new int[n, n];
             for (int k = 0; k < IPA.Count(); k++)
@@ -148,8 +156,7 @@ namespace Ffpath
                 {
                     if (D[i, j] != int.MaxValue && D[i, j] == max)
                         Console.WriteLine((IPA[i]) + " -> " /*+ Dd[i]*/ + (IPA[j]) + " = " + (D[i, j] + D[j, i]));
-                    //else if (D[i] == int.MaxValue)
-                    //    Console.WriteLine((IPA[st]) + " -> " + (IPA[i]) + " = " + "маршрут недоступен");
+                    
                 }
             }
 

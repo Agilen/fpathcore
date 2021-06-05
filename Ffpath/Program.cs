@@ -23,8 +23,7 @@ namespace Ffpath
 
             Algor al = new Algor();
 
-
-            var lines = File.ReadAllLines("\\Users\\fonta\\source\\repos\\Ffpath\\Ffpath\\Data\\G1.csv");
+            var lines = File.ReadAllLines("Data/G1.csv");
             var list = new List<Foo>();
 
             foreach (var line in lines) //считываем данные из G1.csv
