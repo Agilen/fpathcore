@@ -10,7 +10,7 @@ namespace Ffpath
     {
         public void Ping(int n, int st, int[,] w, int end, List<string> IPA)
         {
-            string writePath = "\\Users\\fonta\\source\\repos\\Ffpath\\Ffpath\\Data\\res.txt";
+            string writePath = "Data/res.txt";
             string[] Dd = new string[n];
             //string buf = "";
             bool[,] visited = new bool[n, n];
